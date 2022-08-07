@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<div class ="container">
+    <br/>
+    <h3>Login in your Account</h3>
+    <br/>
+   
+    <form method="POST" class="form-register" style="color:white">
+        {{ form.hidden_tag() }}
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User Name") }}
+
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+        <br/>
+       <div class="checkbox mb-3">
+        <h4>Do not have an account?</h4>
+        <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page')}}">Register</a>
+       </div>
+
+       {{ form.submit(class='btn btn-lg btn-block btn-primary')}}
+
+
+    </form>
+</div>
+<style>
+    .container{
+        max-width: 600px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    h1{
+        color: rgb(0, 255, 242);
+        font-size: 80px;
+        font-family:monospace;
+    }
+
+</style>
+{% endblock %}
